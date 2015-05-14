@@ -2,9 +2,9 @@
 
 [![License](https://img.shields.io/cocoapods/l/Facade.svg)](http://doge.mit-license.org) [![Build Status](https://img.shields.io/travis/mamaral/Facade.svg)](https://travis-ci.org/mamaral/Facade/) [![Badge w/ Version](https://img.shields.io/cocoapods/v/Facade.svg)](https://img.shields.io/cocoapods/v/Facade.svg) [![Coverage Status](https://coveralls.io/repos/mamaral/Facade/badge.svg?branch=master)](https://coveralls.io/r/mamaral/Facade?branch=master)
 
-## What is Façade?
+## What is it?
 
-Façade is a `UIView` category allowing you to build your UI layouts in *real-world terms*, just like you would explain it to another person. It is a conglomeration of convenience methods wrapping lots of annoying and tedius frame algebra into human-readable format. Because of this, it's *lightweight* and *flexible* enough to allow you to ***build great looking UI's quickly and easily define unique layout experiences based on device orientation or type.***
+Façade is a `UIView` category allowing you to build your UI in *real-world terms*, in the same way you would explain the layout to someone in conversation. It is a conglomeration of convenience methods wrapping lots of annoying and tedius frame algebra into a human-readable format. Because of this, it's *lightweight* and *flexible* enough to allow you to ***build great looking UI's quickly and easily define unique layout experiences based on device orientation or type.***
 
 ![Demo](screenshots/demo.png)
 
@@ -93,7 +93,7 @@ Sometimes you want a number of view components to be *grouped* together and have
 [self.view groupHorizontally:@[_blueView, _purpleView, _brownView] centeredUnderView:_redView topPadding:10 spacing:10 width:50 height:50];
 ```
 
-![Example 3A](Screenshots/3a.png)
+![Example 3A](screenshots/3a.png)
 
 The cool part of this is that it allows you to add, remove, or reorganize views to a group without having to recalculate all of the frames for each.
 
