@@ -1,6 +1,6 @@
 ## Façade
 
-[![License](https://img.shields.io/cocoapods/l/Facade.svg)](http://doge.mit-license.org) [![Build Status](https://img.shields.io/travis/mamaral/Facade.svg)](https://travis-ci.org/mamaral/Facade/) ![Badge w/ Version](https://img.shields.io/cocoapods/v/Facade.svg) [![Coverage Status](https://coveralls.io/repos/mamaral/Facade/badge.svg?branch=master)](https://coveralls.io/r/mamaral/Facade?branch=master)
+[![License](https://img.shields.io/cocoapods/l/Facade.svg)](http://doge.mit-license.org) [![Build Status](https://img.shields.io/travis/mamaral/Facade.svg)](https://travis-ci.org/mamaral/Facade/) [![Badge w/ Version](https://img.shields.io/cocoapods/v/Facade.svg)](https://img.shields.io/cocoapods/v/Facade.svg) [![Coverage Status](https://coveralls.io/repos/mamaral/Facade/badge.svg?branch=master)](https://coveralls.io/r/mamaral/Facade?branch=master)
 
 ## What is Façade?
 
