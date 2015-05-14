@@ -6,7 +6,7 @@
 
 Façade is a `UIView` category allowing you to build your UI layouts in *real-world terms*, just like you would explain it to another person. It is a conglomeration of convenience methods wrapping lots of annoying and tedius frame algebra into human-readable format. Because of this, it's *lightweight* and *flexible* enough to allow you to ***build great looking UI's quickly and easily define unique layout experiences based on device orientation or type.***
 
-![Demo](Screenshots/demo.png)
+![Demo](screenshots/demo.png)
 
 ```objective-c
 [_headerImageView anchorTopCenterFillingWidthWithLeftAndRightPadding:0 topPadding:0 height:250];
@@ -64,8 +64,8 @@ Many UI layouts *"start"* with a view anchored to the top/corner of the screen, 
 }
 ```
 
-![Example 1A](Screenshots/1a.png)
-![Example 1B](Screenshots/1b.png)
+![Example 1A](screenshots/1a.png)
+![Example 1B](screenshots/1b.png)
 
 ## Relatives
 
@@ -81,8 +81,8 @@ While most layouts start with one or more anchor views, the rest of the componen
 [_yellowView alignUnder:_purpleView centeredFillingWidthAndHeightWithLeftAndRightPadding:10 topAndBottomPadding:10];
 ```
 
-![Example 2A](Screenshots/2a.png)
-![Example 2B](Screenshots/2b.png)
+![Example 2A](screenshots/2a.png)
+![Example 2B](screenshots/2b.png)
 
 ## View Groups
 
@@ -102,7 +102,7 @@ The cool part of this is that it allows you to add, remove, or reorganize views 
 [self.view groupHorizontally:@[_greenView, _blueView, _purpleView, _brownView, _blackView] centeredUnderView:_redView topPadding:10 spacing:10 width:50 height:50];
 ```
 
-![Example 3B](Screenshots/3b.png)
+![Example 3B](screenshots/3b.png)
 
 ## Considerations
 
