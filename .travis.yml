@@ -1,3 +1,6 @@
 language: objective-c
-script:
-  - xctool -project Facade.xcodeproj -sdk iphonesimulator -scheme Facade build
+before_install: gem install cocoapods xcpretty obcd slather -N
+xcode_sdk: iphonesimulator
+xcode_project: Facade.xcodeproj
+xcode_scheme: FacadeTests
+after_success: slather
