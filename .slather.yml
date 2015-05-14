@@ -1,0 +1,3 @@
+coverage_service: coveralls
+xcodeproj: Facade.xcodeproj
+source_directory: Facade
