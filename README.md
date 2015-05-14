@@ -84,6 +84,18 @@ While most layouts start with one or more anchor views, the rest of the componen
 ![Example 2A](screenshots/2a.png)
 ![Example 2B](screenshots/2b.png)
 
+You can also position views *between* two views vertically or horizontally:
+
+```objective-c
+[_purpleView alignBetweenLeft:_orangeView andRight:_yellowView matchingTopWithLeftAndRightPadding:10 height:50];
+[_brownView alignBetweenTop:_orangeView andBottom:_greenView matchingLeftWithTopAndBottomPadding:10 width:50];
+[_grayView alignBetweenLeft:_greenView andRight:_blueView matchingTopWithLeftAndRightPadding:10 height:50];
+[_cyanView alignBetweenTop:_yellowView andBottom:_blueView matchingLeftWithTopAndBottomPadding:10 width:50];
+```
+
+![Example 4A](screenshots/4a.png)
+![Example 4B](screenshots/4b.png)
+
 ## View Groups
 
 Sometimes you want a number of view components to be *grouped* together and have this group as a whole be laid out relative to another view. A common example of this would be share buttons - perhaps on top of an image there's share icons for facebook, pinterest, twitter, etc. This can easily be achieved by telling the appropriate ***superview*** to group an array of child views with a particular layout, padding, and sizes. Here's two-examples-in-one:
