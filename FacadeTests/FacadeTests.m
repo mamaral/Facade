@@ -13,6 +13,7 @@
 @interface FacadeTests : XCTestCase {
     UIView *_candidateView;
     UIView *_containerView;
+    UIView *_siblingView;
 }
 
 @end
@@ -26,11 +27,15 @@
 
     _containerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 1000, 1000)];
     [_containerView addSubview:_candidateView];
+
+    _siblingView = [[UIView alloc] initWithFrame:CGRectMake(300, 300, 100, 100)];
+    [_containerView addSubview:_siblingView];
 }
 
 - (void)tearDown {
     _candidateView = nil;
     _containerView = nil;
+    _siblingView = nil;
 
     [super tearDown];
 }
@@ -129,21 +134,50 @@
     XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(10, 789, 980, 111)));
 }
 
-/*
-
-TODO:
-
 #pragma mark - Alignment Relative to Siblings
 
 #pragma mark - To the right
 
-- (void)alignToTheRightOf:(UIView *)view matchingTopWithLeftPadding:(CGFloat)left width:(CGFloat)width height:(CGFloat)height;
-- (void)alignToTheRightOf:(UIView *)view matchingTopAndFillingWidthWithLeftAndRightPadding:(CGFloat)leftAndRight height:(CGFloat)height;
-- (void)alignToTheRightOf:(UIView *)view matchingCenterWithLeftPadding:(CGFloat)left width:(CGFloat)width height:(CGFloat)height;
-- (void)alignToTheRightOf:(UIView *)view matchingCenterAndFillingWidthWithLeftAndRightPadding:(CGFloat)leftAndRight height:(CGFloat)height;
-- (void)alignToTheRightOf:(UIView *)view matchingBottomWithLeftPadding:(CGFloat)left width:(CGFloat)width height:(CGFloat)height;
-- (void)alignToTheRightOf:(UIView *)view matchingBottomAndFillingWidthWithLeftAndRightPadding:(CGFloat)leftAndRight height:(CGFloat)height;
+- (void)testAlignToTheRightMatchingTop {
+    [_candidateView alignToTheRightOf:_siblingView matchingTopWithLeftPadding:10 width:50 height:60];
 
+    XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(410, 300, 50, 60)));
+}
+
+- (void)testAlignToTheRightMatchingTopFillingWidth {
+    [_candidateView alignToTheRightOf:_siblingView matchingTopAndFillingWidthWithLeftAndRightPadding:20 height:70];
+
+    XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(420, 300, 560, 70)));
+}
+
+- (void)testAlignToTheRightMatchingCenter {
+    [_candidateView alignToTheRightOf:_siblingView matchingCenterWithLeftPadding:15 width:75 height:32];
+
+    XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(415, 334, 75, 32)));
+}
+
+- (void)testAlignToTheRightMatchingCenterFillingWidth {
+    [_candidateView alignToTheRightOf:_siblingView matchingCenterAndFillingWidthWithLeftAndRightPadding:10 height:100];
+
+    XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(410, 300, 580, 100)));
+}
+
+- (void)testAlignToTheRightMatchingBottom {
+    [_candidateView alignToTheRightOf:_siblingView matchingBottomWithLeftPadding:30 width:30 height:40];
+
+    XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(430, 360, 30, 40)));
+}
+
+- (void)testAlignToTheRightMatchingBottomFillingWidth {
+    [_candidateView alignToTheRightOf:_siblingView matchingBottomAndFillingWidthWithLeftAndRightPadding:10 height:115];
+
+    XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(410, 285, 580, 115)));
+}
+
+
+/*
+
+ TODO:
 
 #pragma mark - To the left
 
