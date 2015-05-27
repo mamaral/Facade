@@ -139,7 +139,7 @@
 }
 
 - (void)alignUnder:(UIView *)view withRightPadding:(CGFloat)right topPadding:(CGFloat)top width:(CGFloat)width height:(CGFloat)height {
-    self.frame = CGRectMake(CGRectGetMaxX(view.frame) - width - right, CGRectGetMaxY(view.frame) + top, width, height);
+    self.frame = CGRectMake(CGRectGetMaxX(self.superview.frame) - width - right, CGRectGetMaxY(view.frame) + top, width, height);
 }
 
 - (void)alignUnder:(UIView *)view matchingLeftWithTopPadding:(CGFloat)top width:(CGFloat)width height:(CGFloat)height {
