@@ -214,24 +214,78 @@
 }
 
 
- /*
-
-  TODO:
-
 #pragma mark - Under
 
-- (void)alignUnder:(UIView *)view withLeftPadding:(CGFloat)left topPadding:(CGFloat)top width:(CGFloat)width height:(CGFloat)height;
-- (void)alignUnder:(UIView *)view withRightPadding:(CGFloat)right topPadding:(CGFloat)top width:(CGFloat)width height:(CGFloat)height;
-- (void)alignUnder:(UIView *)view matchingLeftWithTopPadding:(CGFloat)top width:(CGFloat)width height:(CGFloat)height;
-- (void)alignUnder:(UIView *)view matchingLeftAndFillingWidthWithRightPadding:(CGFloat)right topPadding:(CGFloat)top height:(CGFloat)height;
-- (void)alignUnder:(UIView *)view matchingCenterWithTopPadding:(CGFloat)top width:(CGFloat)width height:(CGFloat)height;
-- (void)alignUnder:(UIView *)view centeredFillingWidthWithLeftAndRightPadding:(CGFloat)leftAndRight topPadding:(CGFloat)top height:(CGFloat)height;
-- (void)alignUnder:(UIView *)view centeredFillingWidthAndHeightWithLeftAndRightPadding:(CGFloat)leftAndRight topAndBottomPadding:(CGFloat)topAndBottom;
-- (void)alignUnder:(UIView *)view matchingRightWithTopPadding:(CGFloat)top width:(CGFloat)width height:(CGFloat)height;
-- (void)alignUnder:(UIView *)view matchingRightAndFillingWidthWithLeftPadding:(CGFloat)left topPadding:(CGFloat)top height:(CGFloat)height;
-- (void)alignUnder:(UIView *)view matchingLeftAndRightFillingHeightWithTopPadding:(CGFloat)top bottomPadding:(CGFloat)bottom;
-- (void)alignUnder:(UIView *)view matchingLeftFillingWidthAndHeightWithRightPadding:(CGFloat)right topPadding:(CGFloat)top bottom:(CGFloat)bottom;
+- (void)testAlignUnderWithLeftPadding {
+    [_candidateView alignUnder:_siblingView withLeftPadding:10 topPadding:20 width:50 height:100];
 
+    XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(10, 420, 50, 100)));
+}
+
+- (void)testAlignUnderWithRightPadding {
+    [_candidateView alignUnder:_siblingView withRightPadding:20 topPadding:50 width:30 height:80];
+
+    XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(950, 450, 30, 80)));
+}
+
+- (void)testAlignUnderMatchingLeft {
+    [_candidateView alignUnder:_siblingView matchingLeftWithTopPadding:5 width:15 height:15];
+
+    XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(300, 405, 15, 15)));
+}
+
+- (void)testAlignUnderMatchingLeftFillingWidth {
+    [_candidateView alignUnder:_siblingView matchingLeftAndFillingWidthWithRightPadding:40 topPadding:10 height:45];
+
+    XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(300, 410, 660, 45)));
+}
+
+- (void)testAlignUnderMatchingCenter {
+    [_candidateView alignUnder:_siblingView matchingCenterWithTopPadding:5 width:44 height:45];
+
+    XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(328, 405, 44, 45)));
+}
+
+- (void)testCenteredFillingWidth {
+    [_candidateView alignUnder:_siblingView centeredFillingWidthWithLeftAndRightPadding:20 topPadding:25 height:30];
+
+    XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(20, 425, 960, 30)));
+}
+
+- (void)testCenteredFillingWidthAndHeight {
+    [_candidateView alignUnder:_siblingView centeredFillingWidthAndHeightWithLeftAndRightPadding:15 topAndBottomPadding:50];
+
+    XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(15, 450, 970, 500)));
+}
+
+- (void)testAlignUnderMatchingRight {
+    [_candidateView alignUnder:_siblingView matchingRightWithTopPadding:12 width:40 height:75];
+
+    XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(360, 412, 40, 75)));
+}
+
+- (void)testAlignUnderMatchingRightFillingWidth {
+    [_candidateView alignUnder:_siblingView matchingRightAndFillingWidthWithLeftPadding:10 topPadding:10 height:110];
+
+    XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(10, 410, 390, 110)));
+}
+
+- (void)testMatchingLeftAndRightFillingHeight {
+    [_candidateView alignUnder:_siblingView matchingLeftAndRightFillingHeightWithTopPadding:30 bottomPadding:30];
+
+    XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(300, 430, 100, 540)));
+}
+
+- (void)testMatchingLeftFillingWidthAndHeight {
+    [_candidateView alignUnder:_siblingView matchingLeftFillingWidthAndHeightWithRightPadding:20 topPadding:25 bottomPadding:20];
+
+    XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(300, 425, 680, 555)));
+}
+
+
+/*
+
+ TODO:
 
 #pragma mark - Above
 
