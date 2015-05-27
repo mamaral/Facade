@@ -112,4 +112,8 @@
 - (void)groupVertically:(NSArray *)subviews centerWithSpacing:(CGFloat)spacing width:(CGFloat)width height:(CGFloat)height;
 - (void)groupVertically:(NSArray *)subviews bottomCenterWithBottomPadding:(CGFloat)bottom spacing:(CGFloat)spacing width:(CGFloat)width height:(CGFloat)height;
 
+#pragma mark - Grid
+
+- (void)groupGrid:(NSArray *)subviews fillingWidthWithColumnCount:(NSUInteger)columnCount spacing:(CGFloat)spacing;
+
 @end

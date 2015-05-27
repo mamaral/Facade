@@ -326,4 +326,32 @@
     }
 }
 
+
+#pragma mark - Grid
+
+- (void)groupGrid:(NSArray *)subviews fillingWidthWithColumnCount:(NSUInteger)columnCount spacing:(CGFloat)spacing {
+    NSUInteger currentColumn = 0;
+    CGFloat xOrigin = spacing;
+    CGFloat yOrigin = spacing;
+    CGFloat size = (CGRectGetWidth(self.frame) - ((columnCount + 1) * spacing)) / (CGFloat)columnCount;
+    CGFloat offset = size + spacing;
+
+    for (UIView *subview in subviews) {
+        subview.frame = CGRectMake(xOrigin, yOrigin, size, size);
+
+        if (currentColumn == columnCount - 1) {
+            currentColumn = 0;
+
+            xOrigin = spacing;
+            yOrigin += offset;
+        }
+
+        else {
+            currentColumn++;
+
+            xOrigin += offset;
+        }
+    }
+}
+
 @end
