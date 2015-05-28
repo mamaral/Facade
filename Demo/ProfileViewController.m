@@ -100,7 +100,7 @@ static NSString * const kLabelFont = @"OpenSans-Semibold";
     [_headerImageView addSubview:_pinterestButton];
 
     _avatarImageView = [UIImageView new];
-    _avatarImageView.image = [UIImage imageNamed:@"avatar"];
+    _avatarImageView.image = [UIImage imageNamed:@"flying.jpg"];
     _avatarImageView.clipsToBounds = YES;
     _avatarImageView.layer.cornerRadius = 50;
     _avatarImageView.layer.borderColor = [UIColor whiteColor].CGColor;
@@ -120,7 +120,7 @@ static NSString * const kLabelFont = @"OpenSans-Semibold";
     [_scrollView addSubview:_usernameLabel];
 
     _bioLabel = [UILabel new];
-    _bioLabel.text = @"\"I live for three things: longwinded programming binges, rapid caffeine ingestion, and vindication. I also maintain a few unhealthy relationships with a number of my README's.\"";
+    _bioLabel.text = @"\"I live for three things: programming binges, rapid caffeine ingestion, and vindication. I also maintain a few unhealthy relationships with a number of my READMEs.\"";
     _bioLabel.numberOfLines = 0;
     _bioLabel.textColor = [UIColor lightGrayColor];
     _bioLabel.font = [UIFont italicSystemFontOfSize:12];
@@ -161,7 +161,7 @@ static NSString * const kLabelFont = @"OpenSans-Semibold";
     [_scrollView addSubview:_statsLabel];
 
     _messageButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [_messageButton setImage:[UIImage imageNamed:@"message"] forState:UIControlStateNormal];
+    [_messageButton setImage:[UIImage imageNamed:@"messages"] forState:UIControlStateNormal];
     _messageButton.contentVerticalAlignment = UIControlContentVerticalAlignmentFill;
     _messageButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentFill;
     [_scrollView addSubview:_messageButton];
