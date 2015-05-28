@@ -97,6 +97,7 @@
 #pragma mark - Horizontal
 
 - (void)groupHorizontally:(NSArray *)subviews centeredUnderView:(UIView *)view topPadding:(CGFloat)top spacing:(CGFloat)spacing width:(CGFloat)width height:(CGFloat)height;
+- (void)groupHorizontally:(NSArray *)views fillingHeightWithLeftPadding:(CGFloat)left spacing:(CGFloat)spacing topAndBottomPadding:(CGFloat)topAndBottom width:(CGFloat)width;
 
 #pragma mark - Vertical
 
