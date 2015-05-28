@@ -14,6 +14,7 @@
     UIView *_candidateView;
     UIView *_containerView;
     UIView *_siblingView;
+    UIView *_siblingView2;
 }
 
 @end
@@ -30,12 +31,16 @@
 
     _siblingView = [[UIView alloc] initWithFrame:CGRectMake(300, 300, 100, 100)];
     [_containerView addSubview:_siblingView];
+
+    _siblingView2 = [[UIView alloc] initWithFrame:CGRectZero];
+    [_containerView addSubview:_siblingView2];
 }
 
 - (void)tearDown {
     _candidateView = nil;
     _containerView = nil;
     _siblingView = nil;
+    _siblingView2 = nil;
 
     [super tearDown];
 }
@@ -270,36 +275,73 @@
     XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(10, 410, 390, 110)));
 }
 
-- (void)testMatchingLeftAndRightFillingHeight {
+- (void)testAlignUnderMatchingLeftAndRightFillingHeight {
     [_candidateView alignUnder:_siblingView matchingLeftAndRightFillingHeightWithTopPadding:30 bottomPadding:30];
 
     XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(300, 430, 100, 540)));
 }
 
-- (void)testMatchingLeftFillingWidthAndHeight {
+- (void)testAlignUnderMatchingLeftFillingWidthAndHeight {
     [_candidateView alignUnder:_siblingView matchingLeftFillingWidthAndHeightWithRightPadding:20 topPadding:25 bottomPadding:20];
 
     XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(300, 425, 680, 555)));
 }
 
 
-/*
-
- TODO:
-
 #pragma mark - Above
 
-- (void)alignAbove:(UIView *)view matchingLeftWithBottomPadding:(CGFloat)bottom width:(CGFloat)width height:(CGFloat)height;
-- (void)alignAbove:(UIView *)view matchingLeftAndFillingWidthWithRightPadding:(CGFloat)right bottomPadding:(CGFloat)bottom height:(CGFloat)height;
-- (void)alignAbove:(UIView *)view matchingCenterWithBottomPadding:(CGFloat)bottom width:(CGFloat)width height:(CGFloat)height;
-- (void)alignAbove:(UIView *)view matchingRightWithBottomPadding:(CGFloat)bottom width:(CGFloat)width height:(CGFloat)height;
-- (void)alignAbove:(UIView *)view matchingRightAndFillingWidthWithLeftPadding:(CGFloat)left bottomPadding:(CGFloat)bottom height:(CGFloat)height;
+- (void)testAlignAboveMatchingLeft {
+    [_candidateView alignAbove:_siblingView matchingLeftWithBottomPadding:10 width:40 height:100];
+
+    XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(300, 190, 40, 100)));
+}
+
+- (void)testAlignAboveMatchingLeftFillingWidth {
+    [_candidateView alignAbove:_siblingView matchingLeftAndFillingWidthWithRightPadding:40 bottomPadding:20 height:30];
+
+    XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(300, 250, 660, 30)));
+}
+
+- (void)testAlignAboveMatchingCenter {
+    [_candidateView alignAbove:_siblingView matchingCenterWithBottomPadding:5 width:10 height:15];
+
+    XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(345, 280, 10, 15)));
+}
+
+- (void)testAlignAboveMatchingRight {
+    [_candidateView alignAbove:_siblingView matchingRightWithBottomPadding:40 width:50 height:60];
+
+    XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(350, 200, 50, 60)));
+}
+
+- (void)testAlignAboveMatchingRightFillingWidth {
+    [_candidateView alignAbove:_siblingView matchingRightAndFillingWidthWithLeftPadding:20 bottomPadding:20 height:120];
+
+    XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(20, 160, 380, 120)));
+}
 
 
 #pragma mark - Between
 
-- (void)alignBetweenLeft:(UIView *)leftView andRight:(UIView *)rightView matchingTopWithLeftAndRightPadding:(CGFloat)leftAndRight height:(CGFloat)height;
-- (void)alignBetweenTop:(UIView *)topView andBottom:(UIView *)bottomView matchingLeftWithTopAndBottomPadding:(CGFloat)topAndBottom width:(CGFloat)width;
+- (void)testAlignBetweenHorizontal {
+    _siblingView2.frame = CGRectMake(900, 300, 50, 50);
+
+    [_candidateView alignBetweenLeft:_siblingView andRight:_siblingView2 matchingTopWithLeftAndRightPadding:20 height:70];
+
+    XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(420, 300, 460, 70)));
+}
+
+- (void)testAlignBetweenVertical {
+    _siblingView2.frame = CGRectMake(300, 800, 100, 80);
+
+    [_candidateView alignBetweenTop:_siblingView andBottom:_siblingView2 matchingLeftWithTopAndBottomPadding:30 width:200];
+
+    XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(300, 430, 200, 340)));
+}
+
+/*
+
+ TODO:
 
 #pragma mark - Subview groups
 
