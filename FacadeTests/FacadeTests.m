@@ -395,7 +395,91 @@
 }
 
 
- #pragma mark - Grid
+#pragma mark - Vertical
+
+- (void)testGroupVerticallyUpperRight {
+    [_containerView groupVertically:_groupViews inUpperRightWithRightPadding:10 topPadding:10 spacing:15 width:50 height:60];
+
+    XCTAssertTrue(CGRectEqualToRect(_groupView1.frame, CGRectMake(940, 10, 50, 60)));
+    XCTAssertTrue(CGRectEqualToRect(_groupView2.frame, CGRectMake(940, 85, 50, 60)));
+    XCTAssertTrue(CGRectEqualToRect(_groupView3.frame, CGRectMake(940, 160, 50, 60)));
+    XCTAssertTrue(CGRectEqualToRect(_groupView4.frame, CGRectMake(940, 235, 50, 60)));
+}
+
+- (void)testGroupVerticallyCenterRight {
+    [_containerView groupVertically:_groupViews centerRightWithRightPadding:20 spacing:10 width:40 height:50];
+
+    XCTAssertTrue(CGRectEqualToRect(_groupView1.frame, CGRectMake(940, 385, 40, 50)));
+    XCTAssertTrue(CGRectEqualToRect(_groupView2.frame, CGRectMake(940, 445, 40, 50)));
+    XCTAssertTrue(CGRectEqualToRect(_groupView3.frame, CGRectMake(940, 505, 40, 50)));
+    XCTAssertTrue(CGRectEqualToRect(_groupView4.frame, CGRectMake(940, 565, 40, 50)));
+}
+
+- (void)testGroupVerticallyLowerRight {
+    [_containerView groupVertically:_groupViews inLowerRightWithRightPadding:5 bottomPadding:100 spacing:20 width:100 height:20];
+
+    XCTAssertTrue(CGRectEqualToRect(_groupView1.frame, CGRectMake(895, 880, 100, 20)));
+    XCTAssertTrue(CGRectEqualToRect(_groupView2.frame, CGRectMake(895, 840, 100, 20)));
+    XCTAssertTrue(CGRectEqualToRect(_groupView3.frame, CGRectMake(895, 800, 100, 20)));
+    XCTAssertTrue(CGRectEqualToRect(_groupView4.frame, CGRectMake(895, 760, 100, 20)));
+}
+
+- (void)testGroupVerticallyUpperLeft {
+    [_containerView groupVertically:_groupViews inUpperLeftWithLeftPadding:7 topPadding:10 spacing:30 width:80 height:40];
+
+    XCTAssertTrue(CGRectEqualToRect(_groupView1.frame, CGRectMake(7, 10, 80, 40)));
+    XCTAssertTrue(CGRectEqualToRect(_groupView2.frame, CGRectMake(7, 80, 80, 40)));
+    XCTAssertTrue(CGRectEqualToRect(_groupView3.frame, CGRectMake(7, 150, 80, 40)));
+    XCTAssertTrue(CGRectEqualToRect(_groupView4.frame, CGRectMake(7, 220, 80, 40)));
+}
+
+- (void)testGroupVerticallyCenterLeft {
+    [_containerView groupVertically:_groupViews centerLeftWithLeftPadding:12 spacing:10 width:110 height:150];
+
+    XCTAssertTrue(CGRectEqualToRect(_groupView1.frame, CGRectMake(12, 185, 110, 150)));
+    XCTAssertTrue(CGRectEqualToRect(_groupView2.frame, CGRectMake(12, 345, 110, 150)));
+    XCTAssertTrue(CGRectEqualToRect(_groupView3.frame, CGRectMake(12, 505, 110, 150)));
+    XCTAssertTrue(CGRectEqualToRect(_groupView4.frame, CGRectMake(12, 665, 110, 150)));
+}
+
+- (void)testGroupVerticallyLowerLeft {
+    [_containerView groupVertically:_groupViews inLowerLeftWithLeftPadding:0 bottomPadding:0 spacing:5 width:10 height:10];
+
+    XCTAssertTrue(CGRectEqualToRect(_groupView1.frame, CGRectMake(0, 990, 10, 10)));
+    XCTAssertTrue(CGRectEqualToRect(_groupView2.frame, CGRectMake(0, 975, 10, 10)));
+    XCTAssertTrue(CGRectEqualToRect(_groupView3.frame, CGRectMake(0, 960, 10, 10)));
+    XCTAssertTrue(CGRectEqualToRect(_groupView4.frame, CGRectMake(0, 945, 10, 10)));
+}
+
+- (void)testGroupVerticallyTopCenter {
+    [_containerView groupVertically:_groupViews topCenterWithTopPadding:25 spacing:20 width:200 height:100];
+
+    XCTAssertTrue(CGRectEqualToRect(_groupView1.frame, CGRectMake(400, 25, 200, 100)));
+    XCTAssertTrue(CGRectEqualToRect(_groupView2.frame, CGRectMake(400, 145, 200, 100)));
+    XCTAssertTrue(CGRectEqualToRect(_groupView3.frame, CGRectMake(400, 265, 200, 100)));
+    XCTAssertTrue(CGRectEqualToRect(_groupView4.frame, CGRectMake(400, 385, 200, 100)));
+}
+
+- (void)testGroupVerticallyCenter {
+    [_containerView groupVertically:_groupViews centerWithSpacing:10 width:120 height:160];
+
+    XCTAssertTrue(CGRectEqualToRect(_groupView1.frame, CGRectMake(440, 165, 120, 160)));
+    XCTAssertTrue(CGRectEqualToRect(_groupView2.frame, CGRectMake(440, 335, 120, 160)));
+    XCTAssertTrue(CGRectEqualToRect(_groupView3.frame, CGRectMake(440, 505, 120, 160)));
+    XCTAssertTrue(CGRectEqualToRect(_groupView4.frame, CGRectMake(440, 675, 120, 160)));
+}
+
+- (void)testGroupVerticallyBottomCenter {
+    [_containerView groupVertically:_groupViews bottomCenterWithBottomPadding:100 spacing:100 width:200 height:15];
+
+    XCTAssertTrue(CGRectEqualToRect(_groupView1.frame, CGRectMake(400, 885, 200, 15)));
+    XCTAssertTrue(CGRectEqualToRect(_groupView2.frame, CGRectMake(400, 770, 200, 15)));
+    XCTAssertTrue(CGRectEqualToRect(_groupView3.frame, CGRectMake(400, 655, 200, 15)));
+    XCTAssertTrue(CGRectEqualToRect(_groupView4.frame, CGRectMake(400, 540, 200, 15)));
+}
+
+
+#pragma mark - Grid
 
 - (void)testGroupGrid {
     [_containerView groupGrid:_groupViews fillingWidthWithColumnCount:1 spacing:200];
@@ -433,25 +517,5 @@
     XCTAssertTrue(CGRectEqualToRect(_groupView3.frame, CGRectMake(406, 10, 188, 188)));
     XCTAssertTrue(CGRectEqualToRect(_groupView4.frame, CGRectMake(604, 10, 188, 188)));
 }
-
-/*
-
- TODO:
-
-#pragma mark - Vertical
-
-- (void)groupVertically:(NSArray *)subviews inUpperRightWithRightPadding:(CGFloat)right topPadding:(CGFloat)top spacing:(CGFloat)spacing width:(CGFloat)width height:(CGFloat)height;
-- (void)groupVertically:(NSArray *)subviews centerRightWithRightPadding:(CGFloat)right spacing:(CGFloat)spacing width:(CGFloat)width height:(CGFloat)height;
-- (void)groupVertically:(NSArray *)subviews inLowerRightWithRightPadding:(CGFloat)right bottomPadding:(CGFloat)bottom spacing:(CGFloat)spacing width:(CGFloat)width height:(CGFloat)height;
-
-- (void)groupVertically:(NSArray *)subviews inUpperLeftWithLeftPadding:(CGFloat)left topPadding:(CGFloat)top spacing:(CGFloat)spacing width:(CGFloat)width height:(CGFloat)height;
-- (void)groupVertically:(NSArray *)subviews centerLeftWithLeftPadding:(CGFloat)left spacing:(CGFloat)spacing width:(CGFloat)width height:(CGFloat)height;
-- (void)groupVertically:(NSArray *)subviews inLowerLeftWithLeftPadding:(CGFloat)left bottomPadding:(CGFloat)bottom spacing:(CGFloat)spacing width:(CGFloat)width height:(CGFloat)height;
-
-- (void)groupVertically:(NSArray *)subviews topCenterWithTopPadding:(CGFloat)top spacing:(CGFloat)spacing width:(CGFloat)width height:(CGFloat)height;
-- (void)groupVertically:(NSArray *)subviews centerWithSpacing:(CGFloat)spacing width:(CGFloat)width height:(CGFloat)height;
-- (void)groupVertically:(NSArray *)subviews bottomCenterWithBottomPadding:(CGFloat)bottom spacing:(CGFloat)spacing width:(CGFloat)width height:(CGFloat)height;
-
-*/
 
 @end
