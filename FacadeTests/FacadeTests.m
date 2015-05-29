@@ -340,6 +340,12 @@
     XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(345, 280, 10, 15)));
 }
 
+- (void)testAlignAboveFillingWidth {
+    [_candidateView alignAbove:_siblingView fillingWidthWithLeftAndRightPadding:10 bottomPadding:15 height:50];
+
+    XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(10, 235, 980, 50)));
+}
+
 - (void)testAlignAboveMatchingRight {
     [_candidateView alignAbove:_siblingView matchingRightWithBottomPadding:40 width:50 height:60];
 

@@ -193,7 +193,7 @@
     self.frame = CGRectMake(CGRectGetMidX(view.frame) - (width / 2.0), CGRectGetMinY(view.frame) - height - bottom, width, height);
 }
 
-- (void)alignAbove:(UIView *)view matchingCenterFillingWidthWithLeftAndRightPadding:(CGFloat)leftAndRight bottomPadding:(CGFloat)bottom height:(CGFloat)height {
+- (void)alignAbove:(UIView *)view fillingWidthWithLeftAndRightPadding:(CGFloat)leftAndRight bottomPadding:(CGFloat)bottom height:(CGFloat)height {
     self.frame = CGRectMake(leftAndRight, CGRectGetMinY(view.frame) - height - bottom, CGRectGetWidth(view.superview.frame) - (2 * leftAndRight), height);
 }
 
