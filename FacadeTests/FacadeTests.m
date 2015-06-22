@@ -361,12 +361,20 @@
 
 #pragma mark - Between
 
-- (void)testAlignBetweenHorizontal {
+- (void)testAlignBetweenHorizontalMatchTop {
     _siblingView2.frame = CGRectMake(900, 300, 50, 50);
 
     [_candidateView alignBetweenLeft:_siblingView andRight:_siblingView2 matchingTopWithLeftAndRightPadding:20 height:70];
 
     XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(420, 300, 460, 70)));
+}
+
+- (void)testAlignBetweenHorizontalMatchCenter {
+    _siblingView2.frame = CGRectMake(900, 320, 70, 70);
+
+    [_candidateView alignBetweenLeft:_siblingView andRight:_siblingView2 matchingCenterWithLeftAndRightPadding:10 height:50];
+
+    XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(410, 325, 480, 50)));
 }
 
 - (void)testAlignBetweenVertical {

@@ -213,6 +213,11 @@
     self.frame = CGRectMake(xOrigin, CGRectGetMinY(leftView.frame), CGRectGetWidth(self.superview.frame) - xOrigin - (CGRectGetWidth(self.superview.frame) - CGRectGetMinX(rightView.frame)) - leftAndRight, height);
 }
 
+- (void)alignBetweenLeft:(UIView *)leftView andRight:(UIView *)rightView matchingCenterWithLeftAndRightPadding:(CGFloat)leftAndRight height:(CGFloat)height {
+    CGFloat xOrigin = CGRectGetMaxX(leftView.frame) + leftAndRight;
+    self.frame = CGRectMake(xOrigin, CGRectGetMidY(leftView.frame) - (height / 2.0), CGRectGetWidth(self.superview.frame) - xOrigin - (CGRectGetWidth(self.superview.frame) - CGRectGetMinX(rightView.frame)) - leftAndRight, height);
+}
+
 - (void)alignBetweenTop:(UIView *)topView andBottom:(UIView *)bottomView matchingLeftWithTopAndBottomPadding:(CGFloat)topAndBottom width:(CGFloat)width {
     CGFloat yOrigin = CGRectGetMaxY(topView.frame) + topAndBottom;
     self.frame = CGRectMake(CGRectGetMinX(topView.frame), CGRectGetMaxY(topView.frame) + topAndBottom, width, CGRectGetHeight(self.superview.frame) - yOrigin - (CGRectGetHeight(self.superview.frame) - CGRectGetMinY(bottomView.frame)) - topAndBottom);
