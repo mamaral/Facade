@@ -118,5 +118,6 @@
 #pragma mark - Grid
 
 - (void)groupGrid:(NSArray *)subviews fillingWidthWithColumnCount:(NSUInteger)columnCount spacing:(CGFloat)spacing;
+- (void)groupGrid:(NSArray *)subviews fillingWidthAndHeightWithColumnCount:(NSUInteger)columnCount spacing:(CGFloat)spacing;
 
 @end
