@@ -399,6 +399,15 @@
     XCTAssertTrue(CGRectEqualToRect(_groupView4.frame, CGRectMake(572.50, 410, 50, 70)));
 }
 
+- (void)testGroupHorizontallyFillingWidthAndHeight {
+    [_containerView groupHorizontally:_groupViews fillingWidthAndHeightWithTopAndBottomPadding:10 spacing:15];
+
+    XCTAssertTrue(CGRectEqualToRect(_groupView1.frame, CGRectMake(15, 10, 231.25, 980)));
+    XCTAssertTrue(CGRectEqualToRect(_groupView2.frame, CGRectMake(261.25, 10, 231.25, 980)));
+    XCTAssertTrue(CGRectEqualToRect(_groupView3.frame, CGRectMake(507.50, 10, 231.25, 980)));
+    XCTAssertTrue(CGRectEqualToRect(_groupView4.frame, CGRectMake(753.75, 10, 231.25, 980)));
+}
+
 - (void)testGroupHorizontallyFillingHeight {
     [_containerView groupHorizontally:_groupViews fillingHeightWithLeftPadding:20 spacing:25 topAndBottomPadding:15 width:40];
 

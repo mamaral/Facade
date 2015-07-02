@@ -238,6 +238,19 @@
     }
 }
 
+- (void)groupHorizontally:(NSArray *)subviews fillingWidthAndHeightWithTopAndBottomPadding:(CGFloat)topAndBottom spacing:(CGFloat)spacing {
+    NSInteger subviewCount = subviews.count;
+    CGFloat width = (CGRectGetWidth(self.frame) - ((subviewCount + 1) * spacing)) / (CGFloat)subviewCount;
+    CGFloat height = CGRectGetHeight(self.frame) - (2 * topAndBottom);
+    CGFloat xOrigin = spacing;
+
+    for (UIView *subview in subviews) {
+        subview.frame = CGRectMake(xOrigin, topAndBottom, width, height);
+
+        xOrigin += width + spacing;
+    }
+}
+
 - (void)groupHorizontally:(NSArray *)views fillingHeightWithLeftPadding:(CGFloat)left spacing:(CGFloat)spacing topAndBottomPadding:(CGFloat)topAndBottom width:(CGFloat)width {
     CGFloat xOrigin = left;
     CGFloat height = CGRectGetHeight(self.frame) - (2 * topAndBottom);
