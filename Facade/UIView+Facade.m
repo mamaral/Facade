@@ -107,6 +107,10 @@
 
 #pragma mark - To the left
 
+- (void)alignToTheLeftOf:(UIView *)view fillingWidthAndHeightWithLeftAndRightPadding:(CGFloat)leftAndRight topAndBottomPadding:(CGFloat)topAndBottom {
+    self.frame = CGRectMake(leftAndRight, topAndBottom, CGRectGetMinX(view.frame) - (2 * leftAndRight), CGRectGetHeight(self.superview.frame) - (2 * topAndBottom));
+}
+
 - (void)alignToTheLeftOf:(UIView *)view matchingTopWithRightPadding:(CGFloat)right width:(CGFloat)width height:(CGFloat)height {
     self.frame = CGRectMake(CGRectGetMinX(view.frame) - width - right, CGRectGetMinY(view.frame), width, height);
 }

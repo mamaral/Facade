@@ -214,6 +214,12 @@
 
 #pragma mark - To the left
 
+- (void)testAlignToTheLeftFillingSuperview {
+    [_candidateView alignToTheLeftOf:_siblingView fillingWidthAndHeightWithLeftAndRightPadding:20 topAndBottomPadding:10];
+
+    XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(20, 10, 260, 980)));
+}
+
 - (void)testAlignToTheLeftMatchingTop {
     [_candidateView alignToTheLeftOf:_siblingView matchingTopWithRightPadding:10 width:45 height:70];
 
