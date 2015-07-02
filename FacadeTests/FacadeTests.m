@@ -214,6 +214,12 @@
 
 #pragma mark - To the left
 
+- (void)testAlignToTheLeftFillingSuperview {
+    [_candidateView alignToTheLeftOf:_siblingView fillingWidthAndHeightWithLeftAndRightPadding:20 topAndBottomPadding:10];
+
+    XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(20, 10, 260, 980)));
+}
+
 - (void)testAlignToTheLeftMatchingTop {
     [_candidateView alignToTheLeftOf:_siblingView matchingTopWithRightPadding:10 width:45 height:70];
 
@@ -397,6 +403,15 @@
     XCTAssertTrue(CGRectEqualToRect(_groupView2.frame, CGRectMake(442.5, 410, 50, 70)));
     XCTAssertTrue(CGRectEqualToRect(_groupView3.frame, CGRectMake(507.5, 410, 50, 70)));
     XCTAssertTrue(CGRectEqualToRect(_groupView4.frame, CGRectMake(572.50, 410, 50, 70)));
+}
+
+- (void)testGroupHorizontallyFillingWidthAndHeight {
+    [_containerView groupHorizontally:_groupViews fillingWidthAndHeightWithTopAndBottomPadding:10 spacing:15];
+
+    XCTAssertTrue(CGRectEqualToRect(_groupView1.frame, CGRectMake(15, 10, 231.25, 980)));
+    XCTAssertTrue(CGRectEqualToRect(_groupView2.frame, CGRectMake(261.25, 10, 231.25, 980)));
+    XCTAssertTrue(CGRectEqualToRect(_groupView3.frame, CGRectMake(507.50, 10, 231.25, 980)));
+    XCTAssertTrue(CGRectEqualToRect(_groupView4.frame, CGRectMake(753.75, 10, 231.25, 980)));
 }
 
 - (void)testGroupHorizontallyFillingHeight {
