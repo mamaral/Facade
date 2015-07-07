@@ -227,6 +227,10 @@
     self.frame = CGRectMake(CGRectGetMinX(topView.frame), CGRectGetMaxY(topView.frame) + topAndBottom, width, CGRectGetHeight(self.superview.frame) - yOrigin - (CGRectGetHeight(self.superview.frame) - CGRectGetMinY(bottomView.frame)) - topAndBottom);
 }
 
+- (void)alignBetweenTop:(UIView *)topView andBottom:(UIView *)bottomView centeredWithLeftAndRightPadding:(CGFloat)leftAndRight topAndBottomPadding:(CGFloat)topAndBottom width:(CGFloat)width {
+    self.frame = CGRectMake(leftAndRight, CGRectGetMaxY(topView.frame) + topAndBottom, width, CGRectGetMinY(bottomView.frame) - CGRectGetMaxY(topView.frame) - (2 * topAndBottom));
+}
+
 
 #pragma mark - Subview groups
 
