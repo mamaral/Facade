@@ -383,12 +383,20 @@
     XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(410, 325, 480, 50)));
 }
 
-- (void)testAlignBetweenVertical {
+- (void)testAlignBetweenVerticalMatchingLeft {
     _siblingView2.frame = CGRectMake(300, 800, 100, 80);
 
     [_candidateView alignBetweenTop:_siblingView andBottom:_siblingView2 matchingLeftWithTopAndBottomPadding:30 width:200];
 
     XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(300, 430, 200, 340)));
+}
+
+- (void)testAlignBetweenVerticalCentered {
+    _siblingView2.frame = CGRectMake(300, 800, 100, 80);
+
+    [_candidateView alignBetweenTop:_siblingView andBottom:_siblingView2 centeredWithLeftAndRightPadding:10 topAndBottomPadding:5];
+
+    XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(10, 405, 980, 390)));
 }
 
 
