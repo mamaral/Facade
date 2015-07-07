@@ -94,7 +94,7 @@
 - (void)alignBetweenLeft:(UIView *)leftView andRight:(UIView *)rightView matchingTopWithLeftAndRightPadding:(CGFloat)leftAndRight height:(CGFloat)height;
 - (void)alignBetweenLeft:(UIView *)leftView andRight:(UIView *)rightView matchingCenterWithLeftAndRightPadding:(CGFloat)leftAndRight height:(CGFloat)height;
 - (void)alignBetweenTop:(UIView *)topView andBottom:(UIView *)bottomView matchingLeftWithTopAndBottomPadding:(CGFloat)topAndBottom width:(CGFloat)width;
-- (void)alignBetweenTop:(UIView *)topView andBottom:(UIView *)bottomView centeredWithLeftAndRightPadding:(CGFloat)leftAndRight topAndBottomPadding:(CGFloat)topAndBottom width:(CGFloat)width;
+- (void)alignBetweenTop:(UIView *)topView andBottom:(UIView *)bottomView centeredWithLeftAndRightPadding:(CGFloat)leftAndRight topAndBottomPadding:(CGFloat)topAndBottom;
 
 #pragma mark - Subview groups
 

@@ -394,9 +394,9 @@
 - (void)testAlignBetweenVerticalCentered {
     _siblingView2.frame = CGRectMake(300, 800, 100, 80);
 
-    [_candidateView alignBetweenTop:_siblingView andBottom:_siblingView2 centeredWithLeftAndRightPadding:10 topAndBottomPadding:5 width:400];
+    [_candidateView alignBetweenTop:_siblingView andBottom:_siblingView2 centeredWithLeftAndRightPadding:10 topAndBottomPadding:5];
 
-    XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(10, 405, 400, 390)));
+    XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(10, 405, 980, 390)));
 }
 
 
