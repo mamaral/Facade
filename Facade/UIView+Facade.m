@@ -80,6 +80,10 @@
 
 #pragma mark - To the right
 
+- (void)alignToTheRightOf:(UIView *)view withLeftAndRightPadding:(CGFloat)leftAndRight topPadding:(CGFloat)top fillingWidthWithHeight:(CGFloat)height {
+    self.frame = CGRectMake(CGRectGetMaxX(view.frame) + leftAndRight, top, CGRectGetWidth(self.superview.frame) - CGRectGetMaxX(view.frame) - (2 * leftAndRight), height);
+}
+
 - (void)alignToTheRightOf:(UIView *)view matchingTopWithLeftPadding:(CGFloat)left width:(CGFloat)width height:(CGFloat)height {
     self.frame = CGRectMake(CGRectGetMaxX(view.frame) + left, CGRectGetMinY(view.frame), width, height);
 }
