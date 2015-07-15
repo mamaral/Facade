@@ -175,6 +175,12 @@
 
 #pragma mark - To the right
 
+- (void)testAlignToTheRight {
+    [_candidateView alignToTheRightOf:_siblingView withLeftPadding:15 topPadding:10 width:75 height:90];
+
+    XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(415, 10, 75, 90)));
+}
+
 - (void)testAlignToTheRightFillingWidth {
     [_candidateView alignToTheRightOf:_siblingView withLeftAndRightPadding:25 topPadding:25 fillingWidthWithHeight:75];
 
