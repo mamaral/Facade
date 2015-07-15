@@ -115,6 +115,10 @@
 
 #pragma mark - To the left
 
+- (void)alignToTheLeftOf:(UIView *)view fillingWidthAndHeightWithLeftAndRightPadding:(CGFloat)leftAndRight topAndBottomPadding:(CGFloat)topAndBottom {
+    self.frame = CGRectMake(leftAndRight, topAndBottom, CGRectGetMinX(view.frame) - (2 * leftAndRight), CGRectGetHeight(self.superview.frame) - (2 * topAndBottom));
+}
+
 - (void)alignToTheLeftOf:(UIView *)view matchingTopWithRightPadding:(CGFloat)right width:(CGFloat)width height:(CGFloat)height {
     self.frame = CGRectMake(CGRectGetMinX(view.frame) - width - right, CGRectGetMinY(view.frame), width, height);
 }
@@ -231,6 +235,10 @@
     self.frame = CGRectMake(CGRectGetMinX(topView.frame), CGRectGetMaxY(topView.frame) + topAndBottom, width, CGRectGetHeight(self.superview.frame) - yOrigin - (CGRectGetHeight(self.superview.frame) - CGRectGetMinY(bottomView.frame)) - topAndBottom);
 }
 
+- (void)alignBetweenTop:(UIView *)topView andBottom:(UIView *)bottomView centeredWithLeftAndRightPadding:(CGFloat)leftAndRight topAndBottomPadding:(CGFloat)topAndBottom {
+    self.frame = CGRectMake(leftAndRight, CGRectGetMaxY(topView.frame) + topAndBottom, CGRectGetWidth(self.superview.frame) - (2 * leftAndRight), CGRectGetMinY(bottomView.frame) - CGRectGetMaxY(topView.frame) - (2 * topAndBottom));
+}
+
 
 #pragma mark - Subview groups
 
@@ -241,6 +249,19 @@
 
     for (UIView *subview in views) {
         subview.frame = CGRectMake(xOrigin, CGRectGetMaxY(view.frame) + top, width, height);
+
+        xOrigin += width + spacing;
+    }
+}
+
+- (void)groupHorizontally:(NSArray *)subviews fillingWidthAndHeightWithTopAndBottomPadding:(CGFloat)topAndBottom spacing:(CGFloat)spacing {
+    NSInteger subviewCount = subviews.count;
+    CGFloat width = (CGRectGetWidth(self.frame) - ((subviewCount + 1) * spacing)) / (CGFloat)subviewCount;
+    CGFloat height = CGRectGetHeight(self.frame) - (2 * topAndBottom);
+    CGFloat xOrigin = spacing;
+
+    for (UIView *subview in subviews) {
+        subview.frame = CGRectMake(xOrigin, topAndBottom, width, height);
 
         xOrigin += width + spacing;
     }
