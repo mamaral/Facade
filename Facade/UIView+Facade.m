@@ -111,7 +111,7 @@
     self.frame = CGRectMake(CGRectGetMaxX(view.frame) + left, top, width, height);
 }
 
-- (void)alignToTheRightOf:(UIView *)view withLeftAndRightPadding:(CGFloat)leftAndRight topPadding:(CGFloat)top fillingWidthWithHeight:(CGFloat)height {
+- (void)alignToTheRightOf:(UIView *)view fillingWidthWithLeftAndRightPadding:(CGFloat)leftAndRight topPadding:(CGFloat)top height:(CGFloat)height {
     self.frame = CGRectMake(CGRectGetMaxX(view.frame) + leftAndRight, top, CGRectGetWidth(self.superview.frame) - CGRectGetMaxX(view.frame) - (2 * leftAndRight), height);
 }
 

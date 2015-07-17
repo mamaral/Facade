@@ -57,7 +57,7 @@
 #pragma mark - To the right
 
 - (void)alignToTheRightOf:(UIView *)view withLeftPadding:(CGFloat)left topPadding:(CGFloat)top width:(CGFloat)width height:(CGFloat)height;
-- (void)alignToTheRightOf:(UIView *)view withLeftAndRightPadding:(CGFloat)leftAndRight topPadding:(CGFloat)top fillingWidthWithHeight:(CGFloat)height;
+- (void)alignToTheRightOf:(UIView *)view fillingWidthWithLeftAndRightPadding:(CGFloat)leftAndRight topPadding:(CGFloat)top height:(CGFloat)height;
 - (void)alignToTheRightOf:(UIView *)view matchingTopWithLeftPadding:(CGFloat)left width:(CGFloat)width height:(CGFloat)height;
 - (void)alignToTheRightOf:(UIView *)view matchingTopAndFillingWidthWithLeftAndRightPadding:(CGFloat)leftAndRight height:(CGFloat)height;
 - (void)alignToTheRightOf:(UIView *)view matchingCenterWithLeftPadding:(CGFloat)left width:(CGFloat)width height:(CGFloat)height;

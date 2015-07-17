@@ -214,7 +214,7 @@
 }
 
 - (void)testAlignToTheRightFillingWidth {
-    [_candidateView alignToTheRightOf:_siblingView withLeftAndRightPadding:25 topPadding:25 fillingWidthWithHeight:75];
+    [_candidateView alignToTheRightOf:_siblingView fillingWidthWithLeftAndRightPadding:25 topPadding:25 height:75];
 
     XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(425, 25, 550, 75)));
 }
