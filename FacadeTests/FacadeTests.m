@@ -78,6 +78,38 @@
 }
 
 
+#pragma mark - Frame utilities
+
+- (void)testFrameUtilities {
+    _candidateView.frame = CGRectZero;
+
+    XCTAssertEqual(_candidateView.xMin, 0);
+    XCTAssertEqual(_candidateView.xMax, 0);
+    XCTAssertEqual(_candidateView.yMin, 0);
+    XCTAssertEqual(_candidateView.yMax, 0);
+    XCTAssertEqual(_candidateView.width, 0);
+    XCTAssertEqual(_candidateView.height, 0);
+
+    _candidateView.frame = CGRectMake(100, 100, 100, 100);
+
+    XCTAssertEqual(_candidateView.xMin, 100);
+    XCTAssertEqual(_candidateView.xMax, 200);
+    XCTAssertEqual(_candidateView.yMin, 100);
+    XCTAssertEqual(_candidateView.yMax, 200);
+    XCTAssertEqual(_candidateView.width, 100);
+    XCTAssertEqual(_candidateView.height, 100);
+
+    _candidateView.frame = CGRectMake(400, 250, 8, 15);
+
+    XCTAssertEqual(_candidateView.xMin, 400);
+    XCTAssertEqual(_candidateView.xMax, 408);
+    XCTAssertEqual(_candidateView.yMin, 250);
+    XCTAssertEqual(_candidateView.yMax, 265);
+    XCTAssertEqual(_candidateView.width, 8);
+    XCTAssertEqual(_candidateView.height, 15);
+}
+
+
 #pragma mark - Alignment Relative to Superview
 
 #pragma mark - Fill superview
@@ -182,7 +214,7 @@
 }
 
 - (void)testAlignToTheRightFillingWidth {
-    [_candidateView alignToTheRightOf:_siblingView withLeftAndRightPadding:25 topPadding:25 fillingWidthWithHeight:75];
+    [_candidateView alignToTheRightOf:_siblingView fillingWidthWithLeftAndRightPadding:25 topPadding:25 height:75];
 
     XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(425, 25, 550, 75)));
 }
