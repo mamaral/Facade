@@ -10,6 +10,17 @@
 
 @interface UIView (Facade)
 
+
+#pragma mark - Frame Utilities
+
+- (CGFloat)xMin;
+- (CGFloat)xMax;
+- (CGFloat)yMin;
+- (CGFloat)yMax;
+- (CGFloat)width;
+- (CGFloat)height;
+
+
 #pragma mark - Alignment Relative to Superview
 
 #pragma mark - Fill superview

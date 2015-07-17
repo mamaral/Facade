@@ -11,6 +11,33 @@
 @implementation UIView (Facade)
 
 
+#pragma mark - Frame Utilities
+
+- (CGFloat)xMin {
+    return CGRectGetMinX(self.frame);
+}
+
+- (CGFloat)xMax {
+    return CGRectGetMaxX(self.frame);
+}
+
+- (CGFloat)yMin {
+    return CGRectGetMinY(self.frame);
+}
+
+- (CGFloat)yMax {
+    return CGRectGetMaxY(self.frame);
+}
+
+- (CGFloat)width {
+    return CGRectGetWidth(self.frame);
+}
+
+- (CGFloat)height {
+    return CGRectGetHeight(self.frame);
+}
+
+
 #pragma mark - Alignment Relative To Superview
 
 #pragma mark - Fill superview
