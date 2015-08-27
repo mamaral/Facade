@@ -281,6 +281,16 @@
     }
 }
 
+- (void)groupHorizontally:(NSArray *)views centeredFillingHeightWithSpacing:(CGFloat)spacing width:(CGFloat)width {
+    CGFloat xOrigin = (CGRectGetWidth(self.frame) - (views.count * width) - ((views.count - 1) * spacing)) / 2.0;
+
+    for (UIView *subview in views) {
+        subview.frame = CGRectMake(xOrigin, 0, width, self.height);
+
+        xOrigin += width + spacing;
+    }
+}
+
 - (void)groupHorizontally:(NSArray *)subviews fillingWidthAndHeightWithTopAndBottomPadding:(CGFloat)topAndBottom spacing:(CGFloat)spacing {
     NSInteger subviewCount = subviews.count;
     CGFloat width = (CGRectGetWidth(self.frame) - ((subviewCount + 1) * spacing)) / (CGFloat)subviewCount;
