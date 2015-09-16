@@ -28,6 +28,7 @@
 		8C1E6DEF1BAA16FE00816732 /* UIView+Facade.m in Sources */ = {isa = PBXBuildFile; fileRef = 2704AD891AF047A200A2D19C /* UIView+Facade.m */; };
 		8C1E6DF01BAA174300816732 /* UIView+Facade.h in Headers */ = {isa = PBXBuildFile; fileRef = 2704AD881AF047A200A2D19C /* UIView+Facade.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8C1E6DF81BAA1AAD00816732 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C1E6DF71BAA1AAD00816732 /* Info.plist */; };
+		8C1E6DF91BAA21A300816732 /* Facade.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C1E6DF61BAA1AAD00816732 /* Facade.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -211,6 +212,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C1E6DF91BAA21A300816732 /* Facade.h in Headers */,
 				8C1E6DF01BAA174300816732 /* UIView+Facade.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

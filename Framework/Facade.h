@@ -1,3 +1,5 @@
+#import <Foundation/Foundation.h>
+
 //! Project version number for Facade.
 FOUNDATION_EXPORT double FacadeVersionNumber;
 
