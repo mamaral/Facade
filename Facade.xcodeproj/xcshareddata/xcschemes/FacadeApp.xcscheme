@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2704AD4A1AEF031200A2D19C"
-               BuildableName = "Facade.app"
-               BlueprintName = "Facade"
+               BuildableName = "FacadeApp.app"
+               BlueprintName = "FacadeApp"
                ReferencedContainer = "container:Facade.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -57,8 +57,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2704AD4A1AEF031200A2D19C"
-            BuildableName = "Facade.app"
-            BlueprintName = "Facade"
+            BuildableName = "FacadeApp.app"
+            BlueprintName = "FacadeApp"
             ReferencedContainer = "container:Facade.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -77,8 +77,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2704AD4A1AEF031200A2D19C"
-            BuildableName = "Facade.app"
-            BlueprintName = "Facade"
+            BuildableName = "FacadeApp.app"
+            BlueprintName = "FacadeApp"
             ReferencedContainer = "container:Facade.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -96,8 +96,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2704AD4A1AEF031200A2D19C"
-            BuildableName = "Facade.app"
-            BlueprintName = "Facade"
+            BuildableName = "FacadeApp.app"
+            BlueprintName = "FacadeApp"
             ReferencedContainer = "container:Facade.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
