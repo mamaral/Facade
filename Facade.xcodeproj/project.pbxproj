@@ -25,6 +25,10 @@
 		2704AD871AEF231600A2D19C /* twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = 2704AD861AEF231600A2D19C /* twitter.png */; };
 		2704AD8A1AF047A200A2D19C /* UIView+Facade.m in Sources */ = {isa = PBXBuildFile; fileRef = 2704AD891AF047A200A2D19C /* UIView+Facade.m */; };
 		27BE1ED71AFA67F100F5A94B /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27BE1ED61AFA67F100F5A94B /* TestViewController.m */; };
+		8C1E6DEF1BAA16FE00816732 /* UIView+Facade.m in Sources */ = {isa = PBXBuildFile; fileRef = 2704AD891AF047A200A2D19C /* UIView+Facade.m */; };
+		8C1E6DF01BAA174300816732 /* UIView+Facade.h in Headers */ = {isa = PBXBuildFile; fileRef = 2704AD881AF047A200A2D19C /* UIView+Facade.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8C1E6DF81BAA1AAD00816732 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8C1E6DF71BAA1AAD00816732 /* Info.plist */; };
+		8C1E6DF91BAA21A300816732 /* Facade.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C1E6DF61BAA1AAD00816732 /* Facade.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +68,9 @@
 		2704AD891AF047A200A2D19C /* UIView+Facade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Facade.m"; sourceTree = "<group>"; };
 		27BE1ED51AFA67F100F5A94B /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		27BE1ED61AFA67F100F5A94B /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
+		8C1E6DD61BAA15B200816732 /* Facade.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Facade.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C1E6DF61BAA1AAD00816732 /* Facade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Facade.h; sourceTree = "<group>"; };
+		8C1E6DF71BAA1AAD00816732 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,12 +88,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8C1E6DD21BAA15B200816732 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		2704AD421AEF031200A2D19C = {
 			isa = PBXGroup;
 			children = (
+				8C1E6DF51BAA1AAD00816732 /* Framework */,
 				2704AD4D1AEF031300A2D19C /* Facade */,
 				27E461641B04428800B74192 /* Demo */,
 				2704AD611AEF031300A2D19C /* FacadeTests */,
@@ -98,6 +113,7 @@
 			children = (
 				2704AD4B1AEF031300A2D19C /* Facade.app */,
 				2704AD5E1AEF031300A2D19C /* FacadeTests.xctest */,
+				8C1E6DD61BAA15B200816732 /* Facade.framework */,
 			);
 			path = Products;
 			sourceTree = "<group>";
@@ -180,12 +196,33 @@
 			path = Misc;
 			sourceTree = "<group>";
 		};
+		8C1E6DF51BAA1AAD00816732 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				8C1E6DF61BAA1AAD00816732 /* Facade.h */,
+				8C1E6DF71BAA1AAD00816732 /* Info.plist */,
+			);
+			path = Framework;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		8C1E6DD31BAA15B200816732 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C1E6DF91BAA21A300816732 /* Facade.h in Headers */,
+				8C1E6DF01BAA174300816732 /* UIView+Facade.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		2704AD4A1AEF031200A2D19C /* Facade */ = {
+		2704AD4A1AEF031200A2D19C /* FacadeApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2704AD681AEF031300A2D19C /* Build configuration list for PBXNativeTarget "Facade" */;
+			buildConfigurationList = 2704AD681AEF031300A2D19C /* Build configuration list for PBXNativeTarget "FacadeApp" */;
 			buildPhases = (
 				2704AD471AEF031200A2D19C /* Sources */,
 				2704AD481AEF031200A2D19C /* Frameworks */,
@@ -195,7 +232,7 @@
 			);
 			dependencies = (
 			);
-			name = Facade;
+			name = FacadeApp;
 			productName = Facade;
 			productReference = 2704AD4B1AEF031300A2D19C /* Facade.app */;
 			productType = "com.apple.product-type.application";
@@ -218,6 +255,24 @@
 			productReference = 2704AD5E1AEF031300A2D19C /* FacadeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		8C1E6DD51BAA15B200816732 /* Facade */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8C1E6DE91BAA15B200816732 /* Build configuration list for PBXNativeTarget "Facade" */;
+			buildPhases = (
+				8C1E6DD11BAA15B200816732 /* Sources */,
+				8C1E6DD21BAA15B200816732 /* Frameworks */,
+				8C1E6DD31BAA15B200816732 /* Headers */,
+				8C1E6DD41BAA15B200816732 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Facade;
+			productName = Facade;
+			productReference = 8C1E6DD61BAA15B200816732 /* Facade.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -234,6 +289,9 @@
 						CreatedOnToolsVersion = 6.0;
 						TestTargetID = 2704AD4A1AEF031200A2D19C;
 					};
+					8C1E6DD51BAA15B200816732 = {
+						CreatedOnToolsVersion = 6.4;
+					};
 				};
 			};
 			buildConfigurationList = 2704AD461AEF031200A2D19C /* Build configuration list for PBXProject "Facade" */;
@@ -249,8 +307,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2704AD4A1AEF031200A2D19C /* Facade */,
+				2704AD4A1AEF031200A2D19C /* FacadeApp */,
 				2704AD5D1AEF031300A2D19C /* FacadeTests */,
+				8C1E6DD51BAA15B200816732 /* Facade */,
 			);
 		};
 /* End PBXProject section */
@@ -272,10 +331,18 @@
 				2704AD851AEF230E00A2D19C /* pinterest.png in Resources */,
 				2704AD561AEF031300A2D19C /* Images.xcassets in Resources */,
 				2704AD751AEF055100A2D19C /* skyline.jpg in Resources */,
+				8C1E6DF81BAA1AAD00816732 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		2704AD5C1AEF031300A2D19C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8C1E6DD41BAA15B200816732 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -305,12 +372,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8C1E6DD11BAA15B200816732 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C1E6DEF1BAA16FE00816732 /* UIView+Facade.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
 		2704AD601AEF031300A2D19C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2704AD4A1AEF031200A2D19C /* Facade */;
+			target = 2704AD4A1AEF031200A2D19C /* FacadeApp */;
 			targetProxy = 2704AD5F1AEF031300A2D19C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -445,7 +520,7 @@
 				INFOPLIST_FILE = "FacadeTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Facade.app/Facade";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FacadeApp.app/FacadeApp";
 			};
 			name = Debug;
 		};
@@ -460,7 +535,54 @@
 				INFOPLIST_FILE = "FacadeTests/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Facade.app/Facade";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FacadeApp.app/FacadeApp";
+			};
+			name = Release;
+		};
+		8C1E6DEA1BAA15B200816732 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "$(SRCROOT)/Framework/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8C1E6DEB1BAA15B200816732 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "$(SRCROOT)/Framework/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -476,7 +598,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2704AD681AEF031300A2D19C /* Build configuration list for PBXNativeTarget "Facade" */ = {
+		2704AD681AEF031300A2D19C /* Build configuration list for PBXNativeTarget "FacadeApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2704AD691AEF031300A2D19C /* Debug */,
@@ -493,6 +615,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		8C1E6DE91BAA15B200816732 /* Build configuration list for PBXNativeTarget "Facade" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8C1E6DEA1BAA15B200816732 /* Debug */,
+				8C1E6DEB1BAA15B200816732 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
