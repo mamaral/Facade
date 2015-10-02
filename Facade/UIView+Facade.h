@@ -26,6 +26,7 @@
 #pragma mark - Fill superview
 
 - (void)fillSuperview;
+- (void)fillSuperviewWithLeftPadding:(CGFloat)left rightPadding:(CGFloat)right topPadding:(CGFloat)top bottomPadding:(CGFloat)bottom;
 
 
 #pragma mark - Corner alignment

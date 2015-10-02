@@ -46,6 +46,13 @@
     self.frame = CGRectMake(0, 0, CGRectGetWidth(self.superview.frame), CGRectGetHeight(self.superview.frame));
 }
 
+- (void)fillSuperviewWithLeftPadding:(CGFloat)left rightPadding:(CGFloat)right topPadding:(CGFloat)top bottomPadding:(CGFloat)bottom {
+    CGFloat width = CGRectGetWidth(self.superview.frame) - (left + right);
+    CGFloat height = CGRectGetHeight(self.superview.frame) - (top + bottom);
+
+    self.frame = CGRectMake(left, top, width, height);
+}
+
 #pragma mark - Corner alignment
 
 - (void)anchorTopLeftWithLeftPadding:(CGFloat)left topPadding:(CGFloat)top width:(CGFloat)width height:(CGFloat)height {

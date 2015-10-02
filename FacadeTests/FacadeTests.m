@@ -120,6 +120,12 @@
     XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(0, 0, 1000, 1000)));
 }
 
+- (void)testFillSuperViewWithPaddings {
+    [_candidateView fillSuperviewWithLeftPadding:10 rightPadding:20 topPadding:30 bottomPadding:40];
+
+    XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(10, 30, 970, 930)));
+}
+
 
 #pragma mark - Corner alignment
 
