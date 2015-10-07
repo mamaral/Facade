@@ -209,6 +209,18 @@
     XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(10, 789, 980, 111)));
 }
 
+- (void)testCenterLeftFillingHeight {
+    [_candidateView anchorCenterLeftFillingHeightWithTopPadding:10 bottomPadding:20 leftPadding:100 width:500];
+
+    XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(100, 10, 500, 970)));
+}
+
+- (void)testCenterRightFillingHeight {
+    [_candidateView anchorCenterRightFillingHeightWithTopPadding:10 bottomPadding:20 rightPadding:100 width:500];
+
+    XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(400, 10, 500, 970)));
+}
+
 #pragma mark - Alignment Relative to Siblings
 
 #pragma mark - To the right
