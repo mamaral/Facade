@@ -51,6 +51,8 @@
 - (void)anchorInCenterFillingWidthAndHeightWithLeftAndRightPadding:(CGFloat)leftAndRight topAndBottomPadding:(CGFloat)topAndBottom;
 - (void)anchorTopCenterFillingWidthWithLeftAndRightPadding:(CGFloat)leftAndRight topPadding:(CGFloat)top height:(CGFloat)height;
 - (void)anchorBottomCenterFillingWidthWithLeftAndRightPadding:(CGFloat)leftAndRight bottomPadding:(CGFloat)bottom height:(CGFloat)height;
+- (void)anchorCenterLeftFillingHeightWithTopPadding:(CGFloat)top bottomPadding:(CGFloat)bottom leftPadding:(CGFloat)left width:(CGFloat)width;
+- (void)anchorCenterRightFillingHeightWithTopPadding:(CGFloat)top bottomPadding:(CGFloat)bottom rightPadding:(CGFloat)right width:(CGFloat)width;
 
 
 #pragma mark - Alignment Relative to Siblings

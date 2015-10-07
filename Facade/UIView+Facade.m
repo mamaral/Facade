@@ -109,6 +109,13 @@
     self.frame = CGRectMake(leftAndRight, CGRectGetHeight(self.superview.frame) - height - bottom, CGRectGetWidth(self.superview.frame) - (2 * leftAndRight), height);
 }
 
+- (void)anchorCenterLeftFillingHeightWithTopPadding:(CGFloat)top bottomPadding:(CGFloat)bottom leftPadding:(CGFloat)left width:(CGFloat)width {
+    self.frame = CGRectMake(left, top, width, CGRectGetHeight(self.superview.frame) - top - bottom);
+}
+
+- (void)anchorCenterRightFillingHeightWithTopPadding:(CGFloat)top bottomPadding:(CGFloat)bottom rightPadding:(CGFloat)right width:(CGFloat)width {
+    self.frame = CGRectMake(CGRectGetWidth(self.superview.frame) - right - width, top, width, CGRectGetHeight(self.superview.frame) - top - bottom);
+}
 
 #pragma mark - Alignment Relative to Siblings
 
