@@ -231,6 +231,10 @@
     self.frame = CGRectMake(CGRectGetMinX(view.frame), CGRectGetMaxY(view.frame) + top, CGRectGetWidth(self.superview.frame) - CGRectGetMinX(view.frame) - right, CGRectGetHeight(self.superview.frame) - CGRectGetMaxY(view.frame) - top - bottom);
 }
 
+- (void)alignUnder:(UIView *)view matchingLeftAndRightWithTopPadding:(CGFloat)top height:(CGFloat)height
+{
+    self.frame = CGRectMake(CGRectGetMinX(view.frame), CGRectGetMaxY(view.frame) + top, CGRectGetWidth(view.frame), height);
+}
 
 #pragma mark - Above
 
@@ -256,6 +260,10 @@
 
 - (void)alignAbove:(UIView *)view matchingRightAndFillingWidthWithLeftPadding:(CGFloat)left bottomPadding:(CGFloat)bottom height:(CGFloat)height {
     self.frame = CGRectMake(left, CGRectGetMinY(view.frame) - height - bottom, CGRectGetMinX(view.frame) + CGRectGetWidth(view.frame) - left, height);
+}
+
+- (void)alignAbove:(UIView *)view matchingLeftAndRightWithBottomPadding:(CGFloat)bottom height:(CGFloat)height {
+    self.frame = CGRectMake(CGRectGetMinX(view.frame), CGRectGetMinY(view.frame) - bottom - height, CGRectGetWidth(view.frame), height);
 }
 
 
