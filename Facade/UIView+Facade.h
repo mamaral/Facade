@@ -93,6 +93,7 @@
 - (void)alignUnder:(UIView *)view matchingRightAndFillingWidthWithLeftPadding:(CGFloat)left topPadding:(CGFloat)top height:(CGFloat)height;
 - (void)alignUnder:(UIView *)view matchingLeftAndRightFillingHeightWithTopPadding:(CGFloat)top bottomPadding:(CGFloat)bottom;
 - (void)alignUnder:(UIView *)view matchingLeftFillingWidthAndHeightWithRightPadding:(CGFloat)right topPadding:(CGFloat)top bottomPadding:(CGFloat)bottom;
+- (void)alignUnder:(UIView *)view matchingLeftAndRightWithTopPadding:(CGFloat)top height:(CGFloat)height;
 
 
 #pragma mark - Above
@@ -103,6 +104,7 @@
 - (void)alignAbove:(UIView *)view fillingWidthWithLeftAndRightPadding:(CGFloat)leftAndRight bottomPadding:(CGFloat)bottom height:(CGFloat)height;
 - (void)alignAbove:(UIView *)view matchingRightWithBottomPadding:(CGFloat)bottom width:(CGFloat)width height:(CGFloat)height;
 - (void)alignAbove:(UIView *)view matchingRightAndFillingWidthWithLeftPadding:(CGFloat)left bottomPadding:(CGFloat)bottom height:(CGFloat)height;
+- (void)alignAbove:(UIView *)view matchingLeftAndRightWithBottomPadding:(CGFloat)bottom height:(CGFloat)height;
 
 
 #pragma mark - Between

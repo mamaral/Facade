@@ -387,6 +387,12 @@
     XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(300, 425, 680, 555)));
 }
 
+- (void)testAlignUnderMatchingLeftAndRightWithTopPadding {
+    [_candidateView alignUnder:_siblingView matchingLeftAndRightWithTopPadding:20 height:200];
+
+    XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(300, 420, 100, 200)));
+}
+
 
 #pragma mark - Above
 
@@ -426,6 +432,11 @@
     XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(20, 160, 380, 120)));
 }
 
+- (void)testAlignAboveMatchingLeftAndRightWithBottomPadding {
+    [_candidateView alignAbove:_siblingView matchingLeftAndRightWithBottomPadding:20 height:120];
+
+    XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(300, 160, 100, 120)));
+}
 
 #pragma mark - Between
 
