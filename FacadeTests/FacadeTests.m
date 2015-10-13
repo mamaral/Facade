@@ -396,6 +396,18 @@
 
 #pragma mark - Above
 
+- (void)testAlignAboveWithLeftPadding {
+    [_candidateView alignAbove:_siblingView withLeftPadding:10 bottomPadding:20 width:50 height:100];
+    
+    XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(10, 180, 50, 100)));
+}
+
+- (void)testAlignAboveWithRightPadding {
+    [_candidateView alignAbove:_siblingView withRightPadding:20 bottomPadding:50 width:30 height:80];
+    
+    XCTAssertTrue(CGRectEqualToRect(_candidateView.frame, CGRectMake(950, 170, 30, 80)));
+}
+
 - (void)testAlignAboveMatchingLeft {
     [_candidateView alignAbove:_siblingView matchingLeftWithBottomPadding:10 width:40 height:100];
 
@@ -511,6 +523,15 @@
     XCTAssertTrue(CGRectEqualToRect(_groupView2.frame, CGRectMake(85, 15, 40, 970)));
     XCTAssertTrue(CGRectEqualToRect(_groupView3.frame, CGRectMake(150, 15, 40, 970)));
     XCTAssertTrue(CGRectEqualToRect(_groupView4.frame, CGRectMake(215, 15, 40, 970)));
+}
+
+- (void)testGroupHorizontallyFillingWidthWithBottomPadding {
+    [_containerView groupHorizontally:_groupViews fillingWidthWithBottomPadding:50 leftPadding:20 rightPadding:30 spacing:100 height:200];
+    
+    XCTAssertTrue(CGRectEqualToRect(_groupView1.frame, CGRectMake(20, 750, 162.5, 200)));
+    XCTAssertTrue(CGRectEqualToRect(_groupView2.frame, CGRectMake(282.5, 750, 162.5, 200)));
+    XCTAssertTrue(CGRectEqualToRect(_groupView3.frame, CGRectMake(545, 750, 162.5, 200)));
+    XCTAssertTrue(CGRectEqualToRect(_groupView4.frame, CGRectMake(807.5, 750, 162.5, 200)));
 }
 
 
