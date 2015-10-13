@@ -98,6 +98,8 @@
 
 #pragma mark - Above
 
+- (void)alignAbove:(UIView *)view withLeftPadding:(CGFloat)left bottomPadding:(CGFloat)bottom width:(CGFloat)width height:(CGFloat)height;
+- (void)alignAbove:(UIView *)view withRightPadding:(CGFloat)right bottomPadding:(CGFloat)bottom width:(CGFloat)width height:(CGFloat)height;
 - (void)alignAbove:(UIView *)view matchingLeftWithBottomPadding:(CGFloat)bottom width:(CGFloat)width height:(CGFloat)height;
 - (void)alignAbove:(UIView *)view matchingLeftAndFillingWidthWithRightPadding:(CGFloat)right bottomPadding:(CGFloat)bottom height:(CGFloat)height;
 - (void)alignAbove:(UIView *)view matchingCenterWithBottomPadding:(CGFloat)bottom width:(CGFloat)width height:(CGFloat)height;
