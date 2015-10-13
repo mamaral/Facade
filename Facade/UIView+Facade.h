@@ -122,6 +122,7 @@
 - (void)groupHorizontally:(NSArray *)views centeredFillingHeightWithSpacing:(CGFloat)spacing width:(CGFloat)width;
 - (void)groupHorizontally:(NSArray *)subviews fillingWidthAndHeightWithTopAndBottomPadding:(CGFloat)topAndBottom spacing:(CGFloat)spacing;
 - (void)groupHorizontally:(NSArray *)views fillingHeightWithLeftPadding:(CGFloat)left spacing:(CGFloat)spacing topAndBottomPadding:(CGFloat)topAndBottom width:(CGFloat)width;
+- (void)groupHorizontally:(NSArray *)views fillingWidthWithBottomPadding:(CGFloat)bottom leftPadding:(CGFloat)left rightPadding:(CGFloat)right spacing:(CGFloat)spacing height:(CGFloat)height;
 
 #pragma mark - Vertical
 

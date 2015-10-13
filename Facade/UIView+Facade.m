@@ -337,6 +337,17 @@
     }
 }
 
+- (void)groupHorizontally:(NSArray *)views fillingWidthWithBottomPadding:(CGFloat)bottom leftPadding:(CGFloat)left rightPadding:(CGFloat)right spacing:(CGFloat)spacing height:(CGFloat)height {
+    CGFloat xOrigin = left;
+    CGFloat yOrigin = CGRectGetHeight(self.frame) - bottom - height;
+    CGFloat width = (CGRectGetWidth(self.frame) - (views.count - 1) * spacing - left - right) / views.count;
+    
+    for (UIView *subview in views) {
+        subview.frame = CGRectMake(xOrigin, yOrigin, width, height);
+        xOrigin += width + spacing;
+    }
+}
+
 
 #pragma mark - Vertical
 
