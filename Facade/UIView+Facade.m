@@ -357,6 +357,15 @@
     }
 }
 
+- (void)groupHorizontally:(NSArray *)views centerWithSpacing:(CGFloat)spacing width:(CGFloat)width height:(CGFloat)height {
+    CGFloat xOrigin = (CGRectGetWidth(self.frame) - (views.count * width) - (views.count - 1) * spacing) / 2;
+    CGFloat yOrigin = CGRectGetHeight(self.frame) / 2.0 - (height / 2.0);
+
+    for (UIView *view in views) {
+        view.frame = CGRectMake(xOrigin, yOrigin, width, height);
+        xOrigin += width + spacing;
+    }
+}
 
 #pragma mark - Vertical
 

@@ -534,6 +534,15 @@
     XCTAssertTrue(CGRectEqualToRect(_groupView4.frame, CGRectMake(807.5, 750, 162.5, 200)));
 }
 
+- (void)testGroupHorizontallyCenter {
+    [_containerView groupHorizontally:_groupViews centerWithSpacing:10 width:120 height:160];
+
+    XCTAssertTrue(CGRectEqualToRect(_groupView1.frame, CGRectMake(245, 420, 120, 160)));
+    XCTAssertTrue(CGRectEqualToRect(_groupView2.frame, CGRectMake(375, 420, 120, 160)));
+    XCTAssertTrue(CGRectEqualToRect(_groupView3.frame, CGRectMake(505, 420, 120, 160)));
+    XCTAssertTrue(CGRectEqualToRect(_groupView4.frame, CGRectMake(635, 420, 120, 160)));
+}
+
 
 #pragma mark - Vertical
 
