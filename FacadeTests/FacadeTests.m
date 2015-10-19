@@ -600,8 +600,8 @@
     XCTAssertTrue(CGRectEqualToRect(_groupView4.frame, CGRectMake(400, 385, 200, 100)));
 }
 
-- (void)testGroupVerticallyCenter {
-    [_containerView groupVertically:_groupViews centerWithSpacing:10 width:120 height:160];
+- (void)testGroupVerticallyCentered {
+    [_containerView groupVertically:_groupViews centeredWithSpacing:10 width:120 height:160];
 
     XCTAssertTrue(CGRectEqualToRect(_groupView1.frame, CGRectMake(440, 165, 120, 160)));
     XCTAssertTrue(CGRectEqualToRect(_groupView2.frame, CGRectMake(440, 335, 120, 160)));
