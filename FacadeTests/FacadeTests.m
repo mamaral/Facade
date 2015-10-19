@@ -498,7 +498,7 @@
     XCTAssertTrue(CGRectEqualToRect(_groupView4.frame, CGRectMake(572.50, 410, 50, 70)));
 }
 
-- (void)testGroupHorizontallyCentered {
+- (void)testGroupHorizontallyCenteredFillingHeight {
     [_containerView groupHorizontally:_groupViews centeredFillingHeightWithSpacing:15 width:40];
 
     XCTAssertTrue(CGRectEqualToRect(_groupView1.frame, CGRectMake(397.50, 0, 40, 1000)));
@@ -534,8 +534,8 @@
     XCTAssertTrue(CGRectEqualToRect(_groupView4.frame, CGRectMake(807.5, 750, 162.5, 200)));
 }
 
-- (void)testGroupHorizontallyCenter {
-    [_containerView groupHorizontally:_groupViews centerWithSpacing:10 width:120 height:160];
+- (void)testGroupHorizontallyCentered {
+    [_containerView groupHorizontally:_groupViews centeredWithSpacing:10 width:120 height:160];
 
     XCTAssertTrue(CGRectEqualToRect(_groupView1.frame, CGRectMake(245, 420, 120, 160)));
     XCTAssertTrue(CGRectEqualToRect(_groupView2.frame, CGRectMake(375, 420, 120, 160)));
