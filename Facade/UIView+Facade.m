@@ -173,7 +173,7 @@
 }
 
 - (void)alignToTheLeftOf:(UIView *)view matchingCenterAndFillingWidthWithLeftAndRightPadding:(CGFloat)leftAndRight height:(CGFloat)height {
-    self.frame = CGRectMake(leftAndRight, CGRectGetMidY(view.frame) - (height / 2.0), CGRectGetMinX(view.frame) - (2 * leftAndRight), height);
+    self.frame = CGRectMake(leftAndRight, CGRectGetMidY(view.frame) - (height / 2.0), CGRectGetWidth(self.superview.frame) - (2 * leftAndRight) - (CGRectGetWidth(self.superview.frame) - CGRectGetMinX(view.frame)), height);
 }
 
 - (void)alignToTheLeftOf:(UIView *)view matchingBottomWithRightPadding:(CGFloat)right width:(CGFloat)width height:(CGFloat)height {
