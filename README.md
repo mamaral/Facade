@@ -34,7 +34,7 @@ NSArray *shareButtons = @[_facebookButton, _twitterButton, _googleButton, _pinte
 1. Add `pod 'Facade'` to your Podfile, and run `pod install`
 2. Import `UIView+Facade.h` in your view controller.
 3. Create your view components like you normally would, customize them, and add them as subviews to their appropriate superview. ***Don't set their frames*** - let us handle that for you.
-2. When appropriate, such as in your view controller's `layoutSubviews` method, call the applicable `UIView+Facade` convenience methods to define how you want your UI to be laid out.
+2. When appropriate, such as in your `UIViewController`'s `viewWillLayoutSubviews` or `UIView`'s `layoutSubviews` method, call the applicable `UIView+Facade` convenience methods to define how you want your UI to be laid out.
 
 ## Creating Anchor Views
 
