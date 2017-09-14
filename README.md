@@ -2,6 +2,10 @@
 
 [![License](https://img.shields.io/cocoapods/l/Facade.svg)](http://doge.mit-license.org) [![Build Status](https://img.shields.io/travis/mamaral/Facade.svg)](https://travis-ci.org/mamaral/Facade/) [![Badge w/ Version](https://img.shields.io/cocoapods/v/Facade.svg)](https://img.shields.io/cocoapods/v/Facade.svg) [![Coverage Status](https://coveralls.io/repos/mamaral/Facade/badge.svg?branch=master)](https://coveralls.io/r/mamaral/Facade?branch=master) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
+# Important
+
+Facade is no longer under active development, and as such if you create any issues or submit pull requests, it's not very likely to be integrated. Thanks to all that helped make Facade better over the last few years!
+
 ## What is it?
 
 Façade is a `UIView` category allowing you to build your UI in *real-world terms*, in the same way you would explain the layout to someone in conversation. It is a conglomeration of convenience methods wrapping lots of annoying and tedius frame algebra into a human-readable format. Because of this, it's *lightweight* and *flexible* enough to allow you to ***build great looking UI's quickly and easily define unique layout experiences based on device orientation or type.***
