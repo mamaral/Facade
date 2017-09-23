@@ -498,7 +498,7 @@
     XCTAssertTrue(CGRectEqualToRect(_groupView4.frame, CGRectMake(572.50, 410, 50, 70)));
 }
 
-- (void)testGroupHorizontallyCentered {
+- (void)testGroupHorizontallyCenteredFillingHeight {
     [_containerView groupHorizontally:_groupViews centeredFillingHeightWithSpacing:15 width:40];
 
     XCTAssertTrue(CGRectEqualToRect(_groupView1.frame, CGRectMake(397.50, 0, 40, 1000)));
@@ -525,6 +525,15 @@
     XCTAssertTrue(CGRectEqualToRect(_groupView4.frame, CGRectMake(215, 15, 40, 970)));
 }
 
+- (void)testGroupHorizontallyFillingWidthWithTopPadding {
+    [_containerView groupHorizontally:_groupViews fillingWidthWithTopPadding:50 leftPadding:20 rightPadding:30 spacing:100 height:200];
+    
+    XCTAssertTrue(CGRectEqualToRect(_groupView1.frame, CGRectMake(20, 50, 162.5, 200)));
+    XCTAssertTrue(CGRectEqualToRect(_groupView2.frame, CGRectMake(282.5, 50, 162.5, 200)));
+    XCTAssertTrue(CGRectEqualToRect(_groupView3.frame, CGRectMake(545, 50, 162.5, 200)));
+    XCTAssertTrue(CGRectEqualToRect(_groupView4.frame, CGRectMake(807.5, 50, 162.5, 200)));
+}
+
 - (void)testGroupHorizontallyFillingWidthWithBottomPadding {
     [_containerView groupHorizontally:_groupViews fillingWidthWithBottomPadding:50 leftPadding:20 rightPadding:30 spacing:100 height:200];
     
@@ -532,6 +541,15 @@
     XCTAssertTrue(CGRectEqualToRect(_groupView2.frame, CGRectMake(282.5, 750, 162.5, 200)));
     XCTAssertTrue(CGRectEqualToRect(_groupView3.frame, CGRectMake(545, 750, 162.5, 200)));
     XCTAssertTrue(CGRectEqualToRect(_groupView4.frame, CGRectMake(807.5, 750, 162.5, 200)));
+}
+
+- (void)testGroupHorizontallyCentered {
+    [_containerView groupHorizontally:_groupViews centeredWithSpacing:10 width:120 height:160];
+
+    XCTAssertTrue(CGRectEqualToRect(_groupView1.frame, CGRectMake(245, 420, 120, 160)));
+    XCTAssertTrue(CGRectEqualToRect(_groupView2.frame, CGRectMake(375, 420, 120, 160)));
+    XCTAssertTrue(CGRectEqualToRect(_groupView3.frame, CGRectMake(505, 420, 120, 160)));
+    XCTAssertTrue(CGRectEqualToRect(_groupView4.frame, CGRectMake(635, 420, 120, 160)));
 }
 
 

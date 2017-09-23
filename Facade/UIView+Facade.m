@@ -357,6 +357,26 @@
     }
 }
 
+- (void)groupHorizontally:(NSArray *)views fillingWidthWithTopPadding:(CGFloat)top leftPadding:(CGFloat)left rightPadding:(CGFloat)right spacing:(CGFloat)spacing height:(CGFloat)height {
+    CGFloat xOrigin = left;
+    CGFloat yOrigin = top;
+    CGFloat width = (CGRectGetWidth(self.frame) - (views.count - 1) * spacing - left - right) / views.count;
+    
+    for (UIView *subview in views) {
+        subview.frame = CGRectMake(xOrigin, yOrigin, width, height);
+        xOrigin += width + spacing;
+    }
+}
+
+- (void)groupHorizontally:(NSArray *)views centeredWithSpacing:(CGFloat)spacing width:(CGFloat)width height:(CGFloat)height {
+    CGFloat xOrigin = (CGRectGetWidth(self.frame) - (views.count * width) - (views.count - 1) * spacing) / 2;
+    CGFloat yOrigin = CGRectGetHeight(self.frame) / 2.0 - (height / 2.0);
+
+    for (UIView *view in views) {
+        view.frame = CGRectMake(xOrigin, yOrigin, width, height);
+        xOrigin += width + spacing;
+    }
+}
 
 #pragma mark - Vertical
 
