@@ -430,7 +430,7 @@
     }
 }
 
-- (void)groupVertically:(NSArray *)subviews centerWithSpacing:(CGFloat)spacing width:(CGFloat)width height:(CGFloat)height {
+- (void)groupVertically:(NSArray *)subviews centeredWithSpacing:(CGFloat)spacing width:(CGFloat)width height:(CGFloat)height {
     CGFloat yOrigin = (CGRectGetHeight(self.frame) - (subviews.count * height) - ((subviews.count - 1) * spacing)) / 2.0;
 
     for (UIView *view in subviews) {
